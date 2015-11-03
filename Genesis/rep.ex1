@@ -1,0 +1,28 @@
+rep.ex1 for ga.f1
+Thu Oct 17 10:30:15 EDT 2013
+ 
+      Experiments = 1
+     Total Trials = 100000
+  Population Size = 500
+ Structure Length = 30
+   Crossover Rate = 0.600
+    Mutation Rate = 0.001
+   Generation Gap = 1.000
+   Scaling Window = 5
+  Report Interval = 20000
+ Structures Saved = 5
+Max Gens w/o Eval = 2
+    Dump Interval = 0
+      Dumps Saved = 0
+          Options = CefgL
+      Random Seed = 123456789
+         Rank Min = 0.750
+
+MEAN
+Gens  Trials  Lost  Conv   Bias    Online    Offline      Best     Average
+   0     500     0     0  0.000  2.727e+01  1.797e+00  8.946e-01  2.727e+01
+  72   20071     0     0  0.000  4.157e+00  6.728e-02  2.000e-04  6.590e-01
+ 148   40094     0     0  0.000  2.339e+00  3.374e-02  1.000e-04  4.305e-01
+ 226   60247     0     0  0.000  1.678e+00  2.247e-02  0.000e+00  2.471e-01
+ 304   80139     0     0  0.000  1.338e+00  1.689e-02  0.000e+00  2.446e-01
+ 383  100047     0     0  0.000  1.128e+00  1.353e-02  0.000e+00  2.563e-01
