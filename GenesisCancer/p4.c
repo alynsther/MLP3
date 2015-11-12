@@ -22,25 +22,26 @@ Data Structures:
 #include <stdlib.h>  /* standard library, including memory allocation */
 #include <math.h>    /* math library */
 #include <string.h>  /* strings */
+#include <unistd.h>
 #include "extern.h"  /* Genesis external definitions */
 
 /*****************************************************************************/
 /* defines -- no semicolons at the ends of the lines */
-// #define DATA_FILE "cancer.data"  /* hardwired into this program */
+#define DATA_FILE "cancer.data"  /* hardwired into this program */
 
 /*****************************************************************************/
 /* constants */
 #define TRUE 1
 #define FALSE 0
-#define STRLEN 250    /* length (in chars) for strings *
+#define STRLEN 250    /* length (in chars) for strings */
 
 /*****************************************************************************/
 /* data structures */
 typedef struct Example* ExampleP;  /* pointer to a example in the linked list */
 struct Example {
   int idNum;         /* the ID number for this line */
-  char attributes[STRLEN];   /* the attributes for this line of data */
-  char class;         /* b=benign; d=malignant */
+  int attributes[STRLEN];   /* the attributes for this line of data */
+  int class;         /* b=benign; d=malignant */
   ExampleP next;     /* next line of data */
 };
 
@@ -60,10 +61,10 @@ int NumAttr;
 int NumLines;
 
 ExampleP readFile(){
-  char* infilename = "bc.data";
+  char* infilename = "bc-numeric.v3.data";
   FILE *infile;
   int i=0;
-  char tempLine[STRLEN]; //temporary storage for the attributes
+  char tempLine[STRLEN]; /*temporary storage for the attributes*/
   ExampleP head = NULL;
   
   //open the file
@@ -86,7 +87,7 @@ ExampleP readFile(){
       example->idNum = i;
       
       //seperate line by commas
-      char *loc;
+      char* loc;
       int locCounter = 0;
       const char comma[2] = ",";
       loc = strtok(tempLine, comma);
@@ -94,12 +95,12 @@ ExampleP readFile(){
       while (loc != NULL){
         //add it to the aObject's attributes
         if(locCounter == 0){
-          example->class = *loc;
+          example->class = *loc - '0';
           loc = strtok(NULL, comma);
           locCounter++;
         }
         else{
-          example->attributes[locCounter-1] = *loc;
+          example->attributes[locCounter-1] = *loc - '0';
           loc = strtok(NULL, comma);
           locCounter++;
         }
@@ -124,6 +125,21 @@ ExampleP readFile(){
   return head; //return the head pointer
 }
 
+void printLinkedList(ExampleP temp){
+  printf("printing...\n");
+  int i;
+
+  while(temp != NULL){
+    for(i=0; i < NumAttr; i++){
+      printf(" %d ", temp->attributes[i]);
+    }
+    printf("\n Class Attr: %d \n", temp->class)
+
+    temp = temp->next;
+  }
+
+}
+
 
 /*****************************************************************************/
 double eval(char *str, int length, double *vect, int genes) {
@@ -137,9 +153,10 @@ double eval(char *str, int length, double *vect, int genes) {
 
   /* Things to do for each new run of the GA */
   if ((Experiment == 0) && (Trials == 0)) {
-    data = readFile();  /* just one for now, and faked instead of read from
-                           file */
+      data = readFile();  
+    /* just one for now, and faked instead of read from file */
   }
+
 
 
 
@@ -259,7 +276,7 @@ ExampleP newExample (int numAttrs) {
     
   /* initialize all fields of the new struct */
   example->idNum = 0;
-  example->attributes = (int*) emalloc (sizeof(int) * (numAttrs));
+  // example->attributes = (int*) emalloc (sizeof(int) * (numAttrs));
   for (i=0; i<numAttrs; i++) {
     example->attributes[i]=0;
   }
