@@ -41,7 +41,7 @@ typedef struct Example* ExampleP;  /* pointer to a example in the linked list */
 struct Example {
   int idNum;         /* the ID number for this line */
   int attributes[STRLEN];   /* the attributes for this line of data */
-  int class;         /* b=benign; d=malignant */
+  int class;         /* 2=benign; 4=malignant */
   ExampleP next;     /* next line of data */
 };
 
