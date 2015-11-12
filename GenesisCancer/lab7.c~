@@ -56,10 +56,8 @@ double eval(char *str, int length, double *vect, int genes) {
 
   static ExampleP data;    /* a hardwired piece of data */
   
-  static int aTruePos;
-  static int bFalseNeg;
-  static int cFalsePos;
-  static int dTrueNeg;
+  int aTruePos = 0;
+  int b
 
 
   /* Things to do for each new run of the GA */
@@ -70,13 +68,10 @@ double eval(char *str, int length, double *vect, int genes) {
   /* Things to do for each new Experiment */
   if (Trials == 0) {
     bestSoFar = 0;
-    aTruePos = 0;
-    bFalseNeg = 0;
-    cFalsePos = 0;
-    dTrueNeg = 0;
     printf("\n\n\n");  /* blank lines between experiments */
   }
         
+  fitness = Trials;
 
   /* **************************************************
      here, will need to compare GA string to data.
@@ -103,41 +98,6 @@ double eval(char *str, int length, double *vect, int genes) {
      care count initially... but it may help the search process.
      **************************************************     
    */
-
-  fitness = 0;
-  for(i=1; i<genes; i++){
-    if(vect[i] > 10){
-      fitness += 1;
-      dontCares++;
-    }else if(vect[i] == data->attributes[i]){
-      fitness+=1;
-    }
-  }
-
-  /* do we need this?
-  if(fitness != genes){
-    fitness = -1;
-  }else{
-    fitness = fitness-dontCares;
-  }
-  */
-
-  if(vect[0] == 'b' && data->attributes[0] == 'b'){
-    /*true pos*/
-    aTruePos++;
-  }else if(vect[0] == 'd' && data->attributes[0] == 'b'){
-    /*false neg*/
-    bFalseNeg++;
-  }else if(vect[0] == 'b' && data->attributes[0] == 'd'){
-    /*false pos*/
-    cFalsePos++;
-  }else{
-    /*true neg*/
-    dTrueNeg++;
-  }
-
-  /*calculate odds ratio? why?*/
-  double oddsRatio = ((0.5+aTruePos) * (0.5+dTrueNeg))/((0.5+cFalsePos) * (0.5+dTrueNeg)); 
 
   if (fitness > bestSoFar) {
     bestSoFar = fitness;
