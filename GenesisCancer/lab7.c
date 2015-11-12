@@ -56,15 +56,16 @@ double eval(char *str, int length, double *vect, int genes) {
 
   static ExampleP data;    /* a hardwired piece of data */
   
-  static int aTruePos;
-  static int bFalseNeg;
-  static int cFalsePos;
-  static int dTrueNeg;
+  static double aTruePos;
+  static double bFalseNeg;
+  static double cFalsePos;
+  static double dTrueNeg;
 
 
   /* Things to do for each new run of the GA */
   if ((Experiment == 0) && (Trials == 0)) {
     /*read in data here*/
+    data = readInFile();
   }
 
   /* Things to do for each new Experiment */
@@ -122,13 +123,13 @@ double eval(char *str, int length, double *vect, int genes) {
   }
   */
 
-  if(vect[0] == 'b' && data->attributes[0] == 'b'){
+  if(vect[0] == 2 && data->attributes[0] == 2){
     /*true pos*/
     aTruePos++;
-  }else if(vect[0] == 'd' && data->attributes[0] == 'b'){
+  }else if(vect[0] == 4 && data->attributes[0] == 2){
     /*false neg*/
     bFalseNeg++;
-  }else if(vect[0] == 'b' && data->attributes[0] == 'd'){
+  }else if(vect[0] == 2 && data->attributes[0] == 4){
     /*false pos*/
     cFalsePos++;
   }else{
