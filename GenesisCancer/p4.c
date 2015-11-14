@@ -83,10 +83,8 @@ ExampleP readFile(){
  
   /*Loop through the lines and make the objects*/
   while(fgets(tempLine, STRLEN, infile) != NULL && i<NumLines){
-
       /*make a new person*/
-      ExampleP example = newExample();
-
+      ExampleP example = newExample(9);
       example->idNum = i;
       
       /*seperate line by commas*/
@@ -106,6 +104,7 @@ ExampleP readFile(){
           locCounter++;
         }
       }
+      //printf("adding person to LL\n");
       
       /*Add the new person to the linked list
 	check if its the first node...*/
@@ -158,7 +157,6 @@ double eval(char *str, int length, double *vect, int genes) {
   int dTrueNeg = 0;
   double oddsRatio;
 
-  printf("!!! %d !!!\n", genes);
   /* Things to do for each new run of the GA */
   if ((Experiment == 0) && (Trials == 0)) {
     /*read in data here*/
@@ -201,8 +199,8 @@ double eval(char *str, int length, double *vect, int genes) {
   iterator = data;
   while(iterator){ /*go thru LL and compare */
     int dataMatches = 1; /* boolean to store if the rule matches the example */
-    for(i=1; i<=genes; i++){
-      if(vect[i] < 10 && vect[i] != data->attributes[i]){ /*this is not a
+    for(i=0; i<genes; i++){
+      if(vect[i] < 10 && vect[i] != iterator->attributes[i]){ /*this is not a
 							    match */
 	dataMatches = 0;
 	break;
@@ -212,17 +210,17 @@ double eval(char *str, int length, double *vect, int genes) {
 
     /* update the odds ratio counts */
     if(dataMatches == 0){ /*attributes did not match */
-      printf("%d", vect[0]);
-      if(vect[0] == 2){ /*false pos?*/
-	cFalsePos++;
-      }else{ /*false neg?*/
+    
+      if(iterator->class == 4){ /*false pos?*/
 	bFalseNeg++;
+      }else{ /*false neg?*/
+	dTrueNeg++;
       }
     }else{ /* data matches */
-      if(vect[0] == 2){
+      if(iterator->class == 4){
 	aTruePos++;
       }else{
-	dTrueNeg++;
+	cFalsePos++;
       }
     }
     
@@ -234,8 +232,7 @@ double eval(char *str, int length, double *vect, int genes) {
   fitness = oddsRatio;
 
   if (fitness > bestSoFar) {
-    bestSoFar = fitness;
-    printf("%f | %f | %f | %f\n", aTruePos, bFalseNeg, cFalsePos, dTrueNeg);    
+    bestSoFar = fitness;    
     printf("New best found in generation %d; Fitness is %.2f \n", Gen, fitness);
 
     printf("Bits: ");
@@ -248,6 +245,8 @@ double eval(char *str, int length, double *vect, int genes) {
     for (i=0; i<genes; i++) {         /* print genes one by one */
       printf("%2d ", (int) vect[i]);
     }
+
+    printf("\nClassifications: TruePos=%d, TrueNeg=%d, FalsePos=%d, FalseNeg=%d\n", aTruePos, dTrueNeg, cFalsePos, bFalseNeg);
     printf("\n\n");
   }
   
@@ -314,6 +313,8 @@ ExampleP newExample (int numAttrs) {
   int i;   /* loop counter */
   ExampleP example = (ExampleP) emalloc(sizeof(struct Example));
     
+  printf("making new example\n");
+
   /* initialize all fields of the new struct */
   example->idNum = 0;
   // example->attributes = (int*) emalloc (sizeof(int) * (numAttrs));

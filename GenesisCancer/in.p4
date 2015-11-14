@@ -1,6 +1,6 @@
        Experiments = 1
-      Total Trials = 100
-   Population Size = 50
+      Total Trials = 10000
+   Population Size = 100
   Structure Length = 36
     Crossover Rate = 0.6
      Mutation Rate = 0.001
