@@ -50,7 +50,7 @@ struct Example {
 /* function prototypes */
 double eval(char *str, int length, double *vect, int genes);  /* Genesis */
 void openFile(FILE **fileptr, char *filename, char *mode);
-ExampleP newExample();      /* get a new Example struct */
+ExampleP newExample(int numAttrs);      /* get a new Example struct */
 ExampleP fauxData ();       /* populate it with fake data */
 void *emalloc(long size);   /* memory allocation, plus checking */
 ExampleP readFile();
@@ -61,9 +61,9 @@ int NumAttr;
 int NumLines;
 
 ExampleP readFile(){
-  char* loc;
+  char *loc;
   int locCounter;
-  char* infilename = "bc-numeric.v3.data";
+  char *infilename = "bc-numeric.v3.data";
   FILE *infile;
   int i=0;
   char tempLine[STRLEN]; /*temporary storage for the attributes*/
@@ -80,31 +80,33 @@ ExampleP readFile(){
   
   /*get the number of attributes and lines*/
   fscanf(infile, "attributes: %d\nlines: %d\n", &NumAttr, &NumLines); 
- 
+
+  /* the attributes is one less because the class is included */
+  NumAttr--;
+
   /*Loop through the lines and make the objects*/
-  while(fgets(tempLine, STRLEN, infile) != NULL && i<NumLines){
+  while((fgets(tempLine, STRLEN, infile) != NULL) && (i<NumLines)){
       /*make a new person*/
-      ExampleP example = newExample(9);
+      ExampleP example = newExample(NumAttr);
       example->idNum = i;
       
       /*seperate line by commas*/
       locCounter = 0;
       loc = strtok(tempLine, comma);
-      
+
       while (loc != NULL){
         /*add it to the aObject's attributes*/
         if(locCounter == 0){
-          example->class = *loc - '0';
+          example->class = atoi(loc);
           loc = strtok(NULL, comma);
           locCounter++;
         }
         else{
-          example->attributes[locCounter-1] = *loc - '0';
+          example->attributes[locCounter-1] = atoi(loc);
           loc = strtok(NULL, comma);
           locCounter++;
         }
       }
-      //printf("adding person to LL\n");
       
       /*Add the new person to the linked list
 	check if its the first node...*/
@@ -133,10 +135,12 @@ void printLinkedList(ExampleP temp){
     for(i=0; i < NumAttr; i++){
       printf(" %d ", temp->attributes[i]);
     }
-    printf("\n Class Attr: %d \n", temp->class);
 
+    printf("\n Class Attr: %d \n", temp->class);
+    
     temp = temp->next;
   }
+
 
 }
 
@@ -162,6 +166,10 @@ double eval(char *str, int length, double *vect, int genes) {
     /*read in data here*/
     data = readFile();
   }
+
+  // if(Experiment == 0 && Trials == 0){
+  //   printLinkedList(data);
+  // }
 
   /* Things to do for each new Experiment */
   if (Trials == 0) {
@@ -313,7 +321,7 @@ ExampleP newExample (int numAttrs) {
   int i;   /* loop counter */
   ExampleP example = (ExampleP) emalloc(sizeof(struct Example));
     
-  printf("making new example\n");
+  // printf("making new example\n");
 
   /* initialize all fields of the new struct */
   example->idNum = 0;

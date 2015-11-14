@@ -1,5 +1,5 @@
 rep.p4 for ga.p4
-Sat Nov 14 12:41:07 EST 2015
+Sat Nov 14 13:23:05 EST 2015
  
       Experiments = 1
      Total Trials = 10000
@@ -20,4 +20,4 @@ Max Gens w/o Eval = 2
 
 MEAN
 Gens  Trials  Lost  Conv   Bias    Online    Offline      Best     Average
-   0     100     0     0  0.000  2.103e+00  7.900e+00  1.316e+01  2.103e+00
+   0     100     0     0  0.000  2.015e+00  7.900e+00  1.316e+01  2.015e+00
