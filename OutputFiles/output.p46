@@ -1,0 +1,53 @@
+    Note: Genesis files modified for use at Bowdoin
+    Note2: ga.p4 is your executable (e.g., if you need to use the debugger)
+    making executables ...
+make: `ga.p4' is up to date.
+make: `report' is up to date.
+    running ga.p4 p46 ...
+
+
+
+New best found in generation 0; Fitness is 1.86 
+Bits: 011111000100110001010101110001001000
+Genes:  6  9  8  9  7  7  9  8 16 
+Classifications: TruePos=0, TrueNeg=444, FalsePos=0, FalseNeg=239
+
+
+New best found in generation 0; Fitness is 9.36 
+Bits: 100110000010100110010010001111111110
+Genes: 15 16  4 15 15  4  3 11 12 
+Classifications: TruePos=2, TrueNeg=444, FalsePos=0, FalseNeg=237
+
+
+New best found in generation 0; Fitness is 13.16 
+Bits: 111000101101100101101011111010101101
+Genes: 12  4 10 15  5 14 12 13 10 
+Classifications: TruePos=3, TrueNeg=444, FalsePos=0, FalseNeg=236
+
+
+New best found in generation 1; Fitness is 16.99 
+Bits: 111001101101100101101011111010101101
+Genes: 12  5 10 15  5 14 12 13 10 
+Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
+
+
+New best found in generation 3; Fitness is 20.85 
+Bits: 111001101111100101111011111010101101
+Genes: 12  5 11 15  6 14 12 13 10 
+Classifications: TruePos=5, TrueNeg=444, FalsePos=0, FalseNeg=234
+
+
+New best found in generation 4; Fitness is 24.75 
+Bits: 100110000010100101101010101010101110
+Genes: 15 16  4 15  5 13 13 13 12 
+Classifications: TruePos=6, TrueNeg=444, FalsePos=0, FalseNeg=233
+
+
+New best found in generation 5; Fitness is 129.42 
+Bits: 111101101101100111101011111010101101
+Genes: 11  5 10 15 12 14 12 13 10 
+Classifications: TruePos=30, TrueNeg=444, FalsePos=0, FalseNeg=209
+
+
+    writing report ...
+    done.

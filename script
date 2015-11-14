@@ -1,0 +1,9 @@
+go p4 p41 >& OutputFiles/output.p41 &
+go p4 p42 >& OutputFiles/output.p42 &
+go p4 p43 >& OutputFiles/output.p43 &
+go p4 p44 >& OutputFiles/output.p44 &
+go p4 p45 >& OutputFiles/output.p45 &
+go p4 p46 >& OutputFiles/output.p46 &
+go p4 p47 >& OutputFiles/output.p47 &
+go p4 p48 >& OutputFiles/output.p48 &
+go p4 p49 >& OutputFiles/output.p49 &

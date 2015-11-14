@@ -1,11 +1,11 @@
-rep.p4 for ga.p4
-Sat Nov 14 13:40:54 EST 2015
+rep.p42 for ga.p4
+Sat Nov 14 13:48:20 EST 2015
  
       Experiments = 1
      Total Trials = 10000
   Population Size = 100
  Structure Length = 36
-   Crossover Rate = 0.600
+   Crossover Rate = 0.300
     Mutation Rate = 0.001
    Generation Gap = 1.000
    Scaling Window = 5

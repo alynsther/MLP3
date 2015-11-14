@@ -54,6 +54,8 @@ ExampleP newExample(int numAttrs);      /* get a new Example struct */
 ExampleP fauxData ();       /* populate it with fake data */
 void *emalloc(long size);   /* memory allocation, plus checking */
 ExampleP readFile();
+void printLinkedList(ExampleP temp);
+
 
 /*****************************************************************************/
 /* global variables */
