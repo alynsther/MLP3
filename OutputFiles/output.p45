@@ -31,5 +31,155 @@ Genes:  3 16 15 15  5 14 12 13 10
 Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
 
 
+
+
+
+New best found in generation 0; Fitness is 1.86 
+Bits: 111000011010011000011010010011000000
+Genes: 12  2 13  5  2 13  8  9  1 
+Classifications: TruePos=0, TrueNeg=444, FalsePos=0, FalseNeg=239
+
+
+New best found in generation 0; Fitness is 5.59 
+Bits: 010011011010100011110010001110001101
+Genes:  8 10 13 16 11  4  3 16 10 
+Classifications: TruePos=1, TrueNeg=444, FalsePos=0, FalseNeg=238
+
+
+New best found in generation 1; Fitness is 16.99 
+Bits: 111010111010100111010111101010001110
+Genes: 12 14 13 15 10  6 13 16 12 
+Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
+
+
+New best found in generation 3; Fitness is 36.64 
+Bits: 111010001110100110111100100011011011
+Genes: 12 16 12 15 14  9 16 10 14 
+Classifications: TruePos=9, TrueNeg=444, FalsePos=0, FalseNeg=230
+
+
+New best found in generation 4; Fitness is 129.42 
+Bits: 111101101011101010101111100111101011
+Genes: 11  5 14 13 13 11 15 12 14 
+Classifications: TruePos=30, TrueNeg=444, FalsePos=0, FalseNeg=209
+
+
+
+
+
+New best found in generation 0; Fitness is 1.86 
+Bits: 111111101100010001010110111110100000
+Genes: 11 12  9  8  7  5 11 13  1 
+Classifications: TruePos=0, TrueNeg=444, FalsePos=0, FalseNeg=239
+
+
+New best found in generation 0; Fitness is 16.99 
+Bits: 100111111001110010011001100110111010
+Genes: 15 11 15  9 15 15 15 14 13 
+Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
+
+
+New best found in generation 3; Fitness is 52.99 
+Bits: 100111101111010111011011100110111010
+Genes: 15 12 11  7 10 14 15 14 13 
+Classifications: TruePos=13, TrueNeg=444, FalsePos=0, FalseNeg=226
+
+
+New best found in generation 4; Fitness is 105.69 
+Bits: 100111101111010010011001100011111010
+Genes: 15 12 11  8 15 15 16 11 13 
+Classifications: TruePos=25, TrueNeg=444, FalsePos=0, FalseNeg=214
+
+
+
+
+
+New best found in generation 0; Fitness is 1.86 
+Bits: 111101001010001001000010101101100001
+Genes: 11  8 13  4  8  4 14  5  2 
+Classifications: TruePos=0, TrueNeg=444, FalsePos=0, FalseNeg=239
+
+
+New best found in generation 0; Fitness is 5.59 
+Bits: 101011101111100110101111000001111110
+Genes: 13 12 11 15 13 11  1  6 12 
+Classifications: TruePos=1, TrueNeg=444, FalsePos=0, FalseNeg=238
+
+
+New best found in generation 0; Fitness is 16.99 
+Bits: 100111101001001010001010001011101001
+Genes: 15 12 15  4 16 13  4 12 15 
+Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
+
+
+New best found in generation 1; Fitness is 24.75 
+Bits: 100111101001010001101010100010011101
+Genes: 15 12 15  8  5 13 16 15 10 
+Classifications: TruePos=6, TrueNeg=444, FalsePos=0, FalseNeg=233
+
+
+New best found in generation 3; Fitness is 32.64 
+Bits: 101111101001010001111000101110001000
+Genes: 14 12 15  8  6 16 14 16 16 
+Classifications: TruePos=8, TrueNeg=444, FalsePos=0, FalseNeg=231
+
+
+New best found in generation 4; Fitness is 105.69 
+Bits: 100111101001010010001010100010011101
+Genes: 15 12 15  8 16 13 16 15 10 
+Classifications: TruePos=25, TrueNeg=444, FalsePos=0, FalseNeg=214
+
+
+
+
+
+New best found in generation 0; Fitness is 1.86 
+Bits: 001101110101000011011011001000100110
+Genes:  3  6  7  1 10 14  4  4  5 
+Classifications: TruePos=0, TrueNeg=444, FalsePos=0, FalseNeg=239
+
+
+New best found in generation 1; Fitness is 5.59 
+Bits: 111110011111110101101110010001110000
+Genes: 11 15 11 10  5 12  8  6  1 
+Classifications: TruePos=1, TrueNeg=444, FalsePos=0, FalseNeg=238
+
+
+New best found in generation 5; Fitness is 13.92 
+Bits: 111110101001110110011000101101101000
+Genes: 11 13 15 10 15 16 14  5 16 
+Classifications: TruePos=17, TrueNeg=442, FalsePos=2, FalseNeg=222
+
+
+New best found in generation 5; Fitness is 16.99 
+Bits: 010111111110111011101000011011111110
+Genes:  7 11 12 12 12 16  5 11 12 
+Classifications: TruePos=4, TrueNeg=444, FalsePos=0, FalseNeg=235
+
+
+New best found in generation 7; Fitness is 20.85 
+Bits: 111110011111110101101000011011111110
+Genes: 11 15 11 10  5 16  5 11 12 
+Classifications: TruePos=5, TrueNeg=444, FalsePos=0, FalseNeg=234
+
+
+New best found in generation 7; Fitness is 24.75 
+Bits: 010010001001110110011000011011101000
+Genes:  8 16 15 10 15 16  5 12 16 
+Classifications: TruePos=6, TrueNeg=444, FalsePos=0, FalseNeg=233
+
+
+New best found in generation 9; Fitness is 30.59 
+Bits: 010110011010100111011111111011111110
+Genes:  7 15 13 15 10 11 12 11 12 
+Classifications: TruePos=22, TrueNeg=443, FalsePos=1, FalseNeg=217
+
+
+New best found in generation 13; Fitness is 32.64 
+Bits: 010110111101110110011000010111111000
+Genes:  7 14 10 10 15 16  7 11 16 
+Classifications: TruePos=8, TrueNeg=444, FalsePos=0, FalseNeg=231
+
+
     writing report ...
     done.

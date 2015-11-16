@@ -1,4 +1,4 @@
-       Experiments = 1
+       Experiments = 5
       Total Trials = 10000
    Population Size = 100
   Structure Length = 36

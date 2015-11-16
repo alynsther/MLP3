@@ -1,7 +1,7 @@
 rep.p48 for ga.p4
-Sat Nov 14 13:48:20 EST 2015
+Mon Nov 16 10:33:29 EST 2015
  
-      Experiments = 1
+      Experiments = 5
      Total Trials = 10000
   Population Size = 100
  Structure Length = 36
@@ -21,3 +21,5 @@ Max Gens w/o Eval = 2
 MEAN
 Gens  Trials  Lost  Conv   Bias    Online    Offline      Best     Average
    0     100     0     0  0.000  2.015e+00  7.900e+00  1.316e+01  2.015e+00
+
+WARNING: Too little data for given number of Experiments.
