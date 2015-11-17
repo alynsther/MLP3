@@ -14,6 +14,9 @@ Data Structures:
   This program stores information breast cancer in a linked list
   Uses GA to find one best rule
 
+Notes:
+Please refer to 0.README.P4 for more information about input and output files
+
 ******************************************************************************/
 
 /*****************************************************************************/
