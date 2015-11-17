@@ -1,7 +1,7 @@
 /*****************************************************************************
  File:   p4.c
  Author: Adela Yang and Jack Truskowski
- Date:   November 8 2015
+ Date:   November 18 2015
 
  Description:
   Read cancer data from file
@@ -53,8 +53,8 @@ void openFile(FILE **fileptr, char *filename, char *mode);
 ExampleP newExample(int numAttrs);      /* get a new Example struct */
 ExampleP fauxData ();       /* populate it with fake data */
 void *emalloc(long size);   /* memory allocation, plus checking */
-ExampleP readFile();
-void printLinkedList(ExampleP temp);
+ExampleP readFile(); /* reads the file and stores it in a linked list */
+void printLinkedList(ExampleP temp); /* prints the linked list */
 
 
 /*****************************************************************************/
@@ -62,47 +62,56 @@ void printLinkedList(ExampleP temp);
 int NumAttr;
 int NumLines;
 
+/*****************************************************************************
+ Function: readFile
+ Inputs:   nothing
+ Returns:  head of linked list
+ Description: reads file and stores it in a linked list
+ *****************************************************************************/
 ExampleP readFile(){
   char *loc;
   int locCounter;
+  /* default file */
   char *infilename = "bc-numeric.v3.data";
   FILE *infile;
   int i=0;
-  char tempLine[STRLEN]; /*temporary storage for the attributes*/
+  char tempLine[STRLEN]; /* temporary storage for the attributes */
   ExampleP head = NULL;
   const char comma[2] = ",";
   
   /* open the file */
   infile = fopen(infilename, "r");
   
+  /* checks that the file exists */
   if (infile == NULL){
       printf("Can't open that file!\n");
       exit(1);
   }
   
-  /*get the number of attributes and lines*/
+  /* get the number of attributes and lines */
   fscanf(infile, "attributes: %d\nlines: %d\n", &NumAttr, &NumLines); 
 
   /* the attributes is one less because the class is included */
   NumAttr--;
 
-  /*Loop through the lines and make the objects*/
+  /*Loop through the lines and make the examples*/
   while((fgets(tempLine, STRLEN, infile) != NULL) && (i<NumLines)){
-      /*make a new person*/
+      /* make a new example */
       ExampleP example = newExample(NumAttr);
       example->idNum = i;
       
-      /*seperate line by commas*/
+      /* seperate line by commas */
       locCounter = 0;
       loc = strtok(tempLine, comma);
 
       while (loc != NULL){
-        /*add it to the aObject's attributes*/
+        /* add it to the example's class */
         if(locCounter == 0){
           example->class = atoi(loc);
           loc = strtok(NULL, comma);
           locCounter++;
         }
+        /* add it to the example's attributes*/
         else{
           example->attributes[locCounter-1] = atoi(loc);
           loc = strtok(NULL, comma);
@@ -110,16 +119,15 @@ ExampleP readFile(){
         }
       }
       
-      /*Add the new person to the linked list
-	check if its the first node...*/
+      /*Add the new example to the linked list check if its the first node*/
       if(head == NULL){
-          head = example;
+        head = example;
       }
       else{
-	/*update this to be the head*/
-          ExampleP tempEx = head;
-          example->next = tempEx;
-          head = example;
+	      /*update this to be the head*/
+        ExampleP tempEx = head;
+        example->next = tempEx;
+        head = example;
       }
 
       i++;
@@ -129,21 +137,25 @@ ExampleP readFile(){
   return head; /*return the head pointer*/
 }
 
+/*****************************************************************************
+ Function: printLinkedList
+ Inputs:   linked list
+ Returns:  nothing
+ Description: prints the linked list
+ *****************************************************************************/
 void printLinkedList(ExampleP temp){
   int i;
   printf("printing...\n");
 
+  /* prints the attributes and class */
   while(temp != NULL){
     for(i=0; i < NumAttr; i++){
       printf(" %d ", temp->attributes[i]);
     }
 
     printf("\n Class Attr: %d \n", temp->class);
-    
     temp = temp->next;
   }
-
-
 }
 
 
