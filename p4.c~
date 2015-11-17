@@ -160,12 +160,8 @@ void printLinkedList(ExampleP temp){
     temp = temp->next;
   }
 }
-/*
-  Function: eval
-  Inputs: a binary string and corresponding length, a gene vector and corresponding number of genes
-  Returns: the fitness of the solution
-  Description: Calculates the fitness of an individual using the Odds Ratio
- */
+
+
 /*****************************************************************************/
 double eval(char *str, int length, double *vect, int genes) {
 
